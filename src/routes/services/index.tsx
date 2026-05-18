@@ -97,7 +97,7 @@ export default component$(() => {
               </div>
 
               <div class="pt-4">
-                <Button variant="primary" size="lg">
+                <Button href="/contact" variant="primary" size="lg">
                   Request Simulation Scope
                 </Button>
               </div>
@@ -173,7 +173,7 @@ export default component$(() => {
               </div>
 
               <div class="pt-4">
-                <Button variant="primary" size="lg" class="hover:bg-emerald-600">
+                <Button href="/contact" variant="primary" size="lg" class="hover:bg-emerald-600">
                   Deploy Response Unit
                 </Button>
               </div>
@@ -271,7 +271,7 @@ export default component$(() => {
               </div>
 
               <div class="pt-4">
-                <Button variant="primary" size="lg">
+                <Button href="/contact" variant="primary" size="lg">
                   Start Investigation
                 </Button>
               </div>
@@ -348,7 +348,7 @@ export default component$(() => {
               </div>
 
               <div class="pt-4">
-                <Button variant="primary" size="lg" class="hover:bg-slate-700">
+                <Button href="/contact" variant="primary" size="lg" class="hover:bg-slate-700">
                   Review Our Framework
                 </Button>
               </div>
@@ -369,24 +369,28 @@ export default component$(() => {
       </Section>
 
       {/* Global Services CTA */}
-      <Section variant="dark" padding="md" withGrid={true}>
-        <Container class="text-center">
-          <div class="mx-auto max-w-3xl space-y-10">
-            <h2 class="text-3xl leading-tight font-black tracking-tighter text-white lg:text-6xl">
-              Ready to Secure Your <br />
-              <span class="text-brand-secondary">Digital Future?</span>
-            </h2>
-            <p class="text-xl font-medium text-slate-400">
-              Consult with our specialists today to develop a tailored defense
-              strategy for your organization.
-            </p>
-            <div class="flex flex-col items-center justify-center gap-6 pt-4 sm:flex-row">
-              <Button href="/contact" variant="secondary" size="lg" class="w-full hover:bg-blue-500 sm:w-auto">
-                Contact an Expert
-              </Button>
-              <Button href="/about" variant="outline" size="lg" class="w-full border-slate-700 bg-transparent text-white hover:bg-white hover:text-slate-900 sm:w-auto">
-                Learn About Our Team
-              </Button>
+      <Section variant="muted" padding="md">
+        <Container>
+          <div class="relative overflow-hidden rounded-sm border border-slate-200 bg-slate-950 px-8 py-12 text-center shadow-2xl md:px-12 md:py-16">
+            {/* Ambient telemetry grid overlay inside card */}
+            <div class="telemetry-grid pointer-events-none absolute inset-0 z-0 opacity-20"></div>
+
+            <div class="relative z-10 mx-auto max-w-3xl space-y-6">
+              <h2 class="text-3xl leading-tight font-black tracking-tighter text-white lg:text-5xl">
+                Ready to Secure Your <br />
+                <span class="text-brand-secondary">Digital Future?</span>
+              </h2>
+              <p class="text-base leading-relaxed font-medium text-slate-400">
+                Consult with our specialists today to develop a tailored defense strategy for your organization.
+              </p>
+              <div class="flex flex-col items-center justify-center gap-4 pt-2 sm:flex-row">
+                <Button href="/contact" variant="primary" size="lg" class="w-full hover:bg-brand-secondary sm:w-auto">
+                  Contact an Expert
+                </Button>
+                <Button href="/about" variant="outline" size="lg" class="w-full border-slate-800 bg-transparent text-white hover:bg-white hover:text-slate-900 sm:w-auto">
+                  Learn About Our Team
+                </Button>
+              </div>
             </div>
           </div>
         </Container>

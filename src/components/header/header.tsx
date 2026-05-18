@@ -47,6 +47,13 @@ export const Header = component$(() => {
           {/* Center Navigation - Perfectly Centered */}
           <nav class="hidden flex-1 items-center justify-center space-x-12 lg:flex">
             <Link
+              href="/"
+              class="hover:text-brand-secondary transition-standard group/link relative text-xs font-bold tracking-widest text-slate-500 uppercase"
+            >
+              Home
+              <span class="bg-brand-secondary absolute -bottom-1 left-0 h-0.5 w-0 transition-all group-hover/link:w-full"></span>
+            </Link>
+            <Link
               href="/services"
               class="hover:text-brand-secondary transition-standard group/link relative text-xs font-bold tracking-widest text-slate-500 uppercase"
             >
@@ -131,6 +138,13 @@ export const Header = component$(() => {
         class={`fixed inset-0 top-20 z-40 bg-white transition-all duration-300 ease-in-out lg:hidden ${isMenuOpen.value ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-4 opacity-0"}`}
       >
         <nav class="flex h-full flex-col items-center justify-start space-y-10 bg-white px-8 pt-16">
+          <Link
+            href="/"
+            onClick$={() => (isMenuOpen.value = false)}
+            class="hover:text-brand-secondary text-2xl font-black tracking-tighter text-slate-900 uppercase transition-colors"
+          >
+            Home
+          </Link>
           <Link
             href="/services"
             onClick$={() => (isMenuOpen.value = false)}
