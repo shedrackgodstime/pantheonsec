@@ -16,7 +16,7 @@ export const Header = component$(() => {
           <div class="relative z-50 flex flex-1 items-center">
             <Link href="/" class="group flex items-center">
               <img
-                src="/pantheonsec.png"
+                src="/pantheonsec-black.png"
                 alt="PantheonSec Logo"
                 class="h-10 w-auto object-contain transition-opacity group-hover:opacity-80 rounded-sm"
                 width={100}
