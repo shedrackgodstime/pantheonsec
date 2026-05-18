@@ -1,5 +1,6 @@
 import { component$, useSignal } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
+import { Container } from "~/components/layout/container";
 
 export const Header = component$(() => {
   const isMenuOpen = useSignal(false);
@@ -8,7 +9,7 @@ export const Header = component$(() => {
     <header
       class={`fixed top-0 right-0 left-0 z-50 border-b border-slate-200/50 transition-colors duration-300 ${isMenuOpen.value ? "bg-white" : "glass-panel"}`}
     >
-      <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
+      <Container>
         <div class="flex h-20 items-center justify-between lg:h-24">
           {/* Logo Section */}
           <div class="relative z-50 flex flex-1 items-center">
@@ -123,7 +124,7 @@ export const Header = component$(() => {
             </button>
           </div>
         </div>
-      </div>
+      </Container>
 
       {/* Mobile Dropdown Menu - Solid white background, no transparency */}
       <div

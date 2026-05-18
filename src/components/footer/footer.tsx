@@ -1,12 +1,13 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
+import { Container } from "~/components/layout/container";
 
 export const Footer = component$(() => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer class="relative overflow-hidden border-t border-slate-800 bg-slate-900 py-12 text-slate-400 lg:py-16">
-      <div class="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
+      <Container class="relative z-10">
         <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Brand & Status Column */}
           <div class="space-y-6 lg:col-span-6">
@@ -144,7 +145,7 @@ export const Footer = component$(() => {
             </a>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 });
