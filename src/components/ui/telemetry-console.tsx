@@ -1,11 +1,10 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
 
 export interface TelemetryConsoleProps {
   title?: string;
   statusText?: string;
   statusColor?: "emerald" | "blue" | "rose";
   nodesCount?: string;
-  ingestionRate?: string;
   shieldProtocol?: string;
   class?: string;
 }
@@ -16,7 +15,6 @@ export const TelemetryConsole = component$<TelemetryConsoleProps>(
     statusText = "ONLINE",
     statusColor = "emerald",
     nodesCount = "1,482",
-    ingestionRate = "42.5k / sec",
     shieldProtocol = "ENGAGED",
     class: className = "",
   }) => {
@@ -25,6 +23,52 @@ export const TelemetryConsole = component$<TelemetryConsoleProps>(
       blue: "text-blue-400 bg-blue-400",
       rose: "text-rose-400 bg-rose-400",
     };
+
+    const state = useStore({
+      ingestionVal: 42.52,
+      barHeights: [12, 28, 45, 18, 32, 14, 25, 49, 36, 12, 18, 42, 38, 22, 15, 29, 34, 48, 12, 19, 31, 24, 44, 38],
+      logs: [
+        "SYS_BOOT: zero-trust perimeter online.",
+        "SECURE_GATEWAY_01: TLS handshake check OK.",
+        "ACTIVE_GUARD: rekeying WireGuard tunnel...",
+      ],
+    });
+
+    // eslint-disable-next-line qwik/no-use-visible-task
+    useVisibleTask$(() => {
+      const logTemplates = [
+        "SEC: blocked port scan from 185.220.101.4",
+        "SYS: re-keyed AES-256 session token",
+        "INGEST: parsed 14k syslog lines",
+        "ALRT: SQLi vector suppressed on gateway_2",
+        "SYS: Kubernetes pods reports stable telemetry",
+        "OK: TLS certs validated successfully",
+        "SEC: threat mitigation threshold stable",
+        "SYS: cleared cache buffer nodes",
+        "SEC: blocked brute force on auth endpoint",
+        "SYS: refreshed zero-trust policy model",
+      ];
+
+      const interval = setInterval(() => {
+        // Shift bar heights to the left and append new random height
+        const nextHeights = [...state.barHeights.slice(1)];
+        nextHeights.push(Math.floor(Math.random() * 40) + 10);
+        state.barHeights = nextHeights;
+        
+        // Slightly fluctuate ingestion rate
+        state.ingestionVal = parseFloat((42 + Math.random() * 1.6).toFixed(2));
+
+        // Randomly push new security logs
+        if (Math.random() > 0.4) {
+          const nextLog = logTemplates[Math.floor(Math.random() * logTemplates.length)];
+          const nextLogs = [...state.logs.slice(1)];
+          nextLogs.push(nextLog);
+          state.logs = nextLogs;
+        }
+      }, 1000);
+
+      return () => clearInterval(interval);
+    });
 
     return (
       <div class={`relative mx-auto mt-8 w-full max-w-lg lg:mt-0 lg:max-w-none ${className}`}>
@@ -48,7 +92,7 @@ export const TelemetryConsole = component$<TelemetryConsoleProps>(
           </div>
 
           {/* Terminal Body */}
-          <div class="relative h-[320px] overflow-hidden p-4 text-slate-300 sm:h-[400px] sm:p-6">
+          <div class="relative h-[360px] overflow-hidden p-4 text-slate-300 sm:h-[420px] sm:p-6">
             {/* Grid Background */}
             <div class="telemetry-grid absolute inset-0 opacity-20"></div>
 
@@ -58,51 +102,58 @@ export const TelemetryConsole = component$<TelemetryConsoleProps>(
             {/* Content */}
             <div class="relative z-20 space-y-4">
               <div class="flex items-center justify-between border-b border-slate-700/50 pb-2">
-                <span class="text-xs text-slate-500 sm:text-sm">SYSTEM STATUS</span>
+                <span class="text-xs text-slate-500 sm:text-sm font-semibold">SYSTEM STATUS</span>
                 <span class="text-xs font-bold text-emerald-400 sm:text-sm">SECURE</span>
               </div>
 
               <div class="space-y-2">
                 <div class="flex justify-between text-[10px] sm:text-xs">
                   <span class="text-slate-400">ACTIVE DEFENSE NODES:</span>
-                  <span class="text-white">{nodesCount}</span>
+                  <span class="text-white font-bold">{nodesCount}</span>
                 </div>
                 <div class="flex justify-between text-[10px] sm:text-xs">
                   <span class="text-slate-400">THREAT INGESTION RATE:</span>
-                  <span class="text-white">{ingestionRate}</span>
+                  <span class="text-emerald-400 font-bold">{state.ingestionVal}k / sec</span>
                 </div>
                 <div class="flex justify-between text-[10px] sm:text-xs">
                   <span class="text-slate-400">SHIELD PROTOCOL:</span>
-                  <span class="text-brand-secondary">{shieldProtocol}</span>
+                  <span class="text-brand-secondary font-black">{shieldProtocol}</span>
                 </div>
               </div>
 
-              <div class="mt-4 border-t border-slate-700/50 pt-4 sm:mt-6">
-                <div class="mb-2 text-[10px] text-slate-500 sm:text-xs">LIVE ANOMALY SCAN</div>
+              <div class="mt-4 border-t border-slate-700/50 pt-4">
+                <div class="mb-2 text-[10px] text-slate-500 sm:text-xs font-semibold">LIVE ANOMALY SCAN</div>
 
-                {/* Faux graph bars */}
-                <div class="mt-2 flex h-16 items-end space-x-1 opacity-80 sm:h-24">
-                  {Array.from({ length: 24 }).map((_, i) => {
-                    const height = Math.floor(Math.random() * 40) + 10;
-                    return (
-                      <div
-                        key={i}
-                        class="bg-brand-secondary/40 w-full rounded-t-sm"
-                        style={`height: ${height}%`}
-                      ></div>
-                    );
-                  })}
+                {/* Live animated bars */}
+                <div class="mt-2 flex h-16 items-end space-x-1 opacity-80 sm:h-20">
+                  {state.barHeights.map((height, i) => (
+                    <div
+                      key={i}
+                      class="bg-brand-secondary/40 w-full rounded-t-sm transition-all duration-300 ease-in-out hover:bg-brand-secondary"
+                      style={`height: ${height}%`}
+                    ></div>
+                  ))}
                 </div>
                 <div class="mt-1 flex justify-between text-[8px] text-slate-500 sm:text-[10px]">
-                  <span>-1H</span>
+                  <span>-1M</span>
                   <span>NOW</span>
                 </div>
               </div>
 
-              <div class="mt-4 font-mono text-[10px] text-slate-400 sm:text-xs">
-                <span class="text-brand-secondary mr-2">➜</span>
-                <span class="opacity-70">Awaiting external input...</span>
-                <span class="animate-pulse">_</span>
+              {/* Dynamic Scrolling Logs */}
+              <div class="mt-4 border-t border-slate-700/50 pt-4 font-mono text-[9px] text-slate-400 sm:text-[10px] space-y-1.5">
+                <div class="text-slate-500 uppercase tracking-widest text-[8px] font-bold">REAL-TIME INTRUSION MONITOR:</div>
+                <div class="space-y-1">
+                  {state.logs.map((log, idx) => (
+                    <div key={idx} class="flex items-center space-x-2 transition-all duration-300">
+                      <span class="text-brand-secondary">➜</span>
+                      <span class={idx === state.logs.length - 1 ? "text-emerald-400 font-semibold" : "opacity-60"}>
+                        {log}
+                      </span>
+                      {idx === state.logs.length - 1 && <span class="animate-pulse">_</span>}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
