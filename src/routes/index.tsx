@@ -179,6 +179,8 @@ export default component$(() => {
             src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070"
             alt="Security Infrastructure"
             class="w-full h-full object-cover opacity-70 grayscale"
+            width={2070}
+            height={1380}
           />
           <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
         </div>
