@@ -1,3 +1,4 @@
+/* eslint-disable qwik/jsx-img */
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { Container } from "~/components/layout/container";
@@ -12,9 +13,13 @@ export const Footer = component$(() => {
           {/* Brand & Status Column */}
           <div class="space-y-6 lg:col-span-6">
             <Link href="/" class="group flex items-center">
-              <span class="text-xl font-extrabold tracking-tighter text-white uppercase transition-colors group-hover:text-brand-secondary">
-                PantheonSec
-              </span>
+              <img
+                src="/pantheonsec.png"
+                alt="PantheonSec Logo"
+                class="h-12 w-auto object-contain transition-opacity group-hover:opacity-80 rounded-sm"
+                width={120}
+                height={48}
+              />
             </Link>
             <p class="max-w-md text-sm leading-relaxed opacity-80">
               Elite asymmetric defense for enterprise infrastructure.

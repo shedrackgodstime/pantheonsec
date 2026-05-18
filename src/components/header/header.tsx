@@ -1,3 +1,4 @@
+/* eslint-disable qwik/jsx-img */
 import { component$, useSignal } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { Container } from "~/components/layout/container";
@@ -14,9 +15,13 @@ export const Header = component$(() => {
           {/* Logo Section */}
           <div class="relative z-50 flex flex-1 items-center">
             <Link href="/" class="group flex items-center">
-              <span class="text-xl font-extrabold tracking-tighter text-slate-900 uppercase transition-colors group-hover:text-brand-secondary lg:text-2xl">
-                PantheonSec
-              </span>
+              <img
+                src="/pantheonsec.png"
+                alt="PantheonSec Logo"
+                class="h-10 w-auto object-contain transition-opacity group-hover:opacity-80 rounded-sm"
+                width={100}
+                height={40}
+              />
             </Link>
           </div>
 
