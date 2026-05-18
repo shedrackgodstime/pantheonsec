@@ -15,7 +15,7 @@ export default component$(() => {
         badgeText="Security Solutions"
         badgeVariant="primary"
         title="Resilient Security for Complex Ecosystems."
-        subtitle="CyberShield delivers tailored, enterprise-wide defense systems designed for continuous stabilization, active protection, and compliance alignment."
+        subtitle="PantheonSec delivers tailored, enterprise-wide defense systems designed for continuous stabilization, active protection, and compliance alignment."
         variant="dark"
       />
 
@@ -156,7 +156,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Enterprise Solutions | CyberShield",
+  title: "Enterprise Solutions | PantheonSec",
   meta: [
     {
       name: "description",

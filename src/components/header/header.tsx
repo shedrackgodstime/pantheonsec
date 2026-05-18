@@ -13,33 +13,9 @@ export const Header = component$(() => {
         <div class="flex h-20 items-center justify-between lg:h-24">
           {/* Logo Section */}
           <div class="relative z-50 flex flex-1 items-center">
-            <Link href="/" class="group flex items-center space-x-3">
-              <div class="transition-standard group-hover:bg-brand-secondary flex h-9 w-9 items-center justify-center rounded-sm bg-slate-900 shadow-md lg:h-11 lg:w-11">
-                <svg
-                  viewBox="0 0 24 24"
-                  class="h-5 w-5 text-white lg:h-7 lg:w-7"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 2L3 7V12C3 17.52 6.84 22.65 12 24C17.16 22.65 21 17.52 21 12V7L12 2Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M12 7V17M7 12H17"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="opacity-50"
-                  />
-                </svg>
-              </div>
-              <span class="text-xl font-black tracking-tighter text-slate-900 uppercase lg:text-2xl">
-                CyberShield
+            <Link href="/" class="group flex items-center">
+              <span class="text-xl font-extrabold tracking-tighter text-slate-900 uppercase transition-colors group-hover:text-brand-secondary lg:text-2xl">
+                PantheonSec
               </span>
             </Link>
           </div>

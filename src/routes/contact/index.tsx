@@ -122,7 +122,7 @@ export default component$(() => {
               </p>
               <div class="space-y-3">
                 <p class="text-lg font-bold tracking-tight text-white">
-                  hello@cybershield.com
+                  hello@pantheonsec.com
                 </p>
                 <div class="h-px w-12 bg-slate-800"></div>
                 <p class="text-xs font-medium tracking-widest text-slate-400 uppercase">
@@ -275,12 +275,12 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Contact Us | CyberShield",
+  title: "Contact Us | PantheonSec",
   meta: [
     {
       name: "description",
       content:
-        "Get in touch with the CyberShield team for expert security advice.",
+        "Get in touch with the PantheonSec team for expert security advice.",
     },
   ],
 };

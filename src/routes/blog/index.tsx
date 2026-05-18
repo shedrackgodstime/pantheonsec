@@ -107,12 +107,12 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Threat Intelligence Insights | CyberShield",
+  title: "Threat Intelligence Insights | PantheonSec",
   meta: [
     {
       name: "description",
       content:
-        "Technical analysis, reverse engineering guides, and cloud infrastructure security advisories from CyberShield.",
+        "Technical analysis, reverse engineering guides, and cloud infrastructure security advisories from PantheonSec.",
     },
   ],
 };

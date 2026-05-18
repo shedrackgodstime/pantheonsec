@@ -13,7 +13,7 @@ export default component$(() => {
         badgeText="Our Mission"
         badgeVariant="primary"
         title="Securing the Global Infrastructure."
-        subtitle="CyberShield was founded on a single principle: to provide elite, asymmetric defense for organizations that cannot afford a perimeter failure."
+        subtitle="PantheonSec was founded on a single principle: to provide elite, asymmetric defense for organizations that cannot afford a perimeter failure."
         variant="dark"
       />
 
@@ -112,12 +112,12 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "About CyberShield | Our Mission & Expertise",
+  title: "About PantheonSec | Our Mission & Expertise",
   meta: [
     {
       name: "description",
       content:
-        "Learn about CyberShield's mission to provide elite cybersecurity defense and protect global digital infrastructure.",
+        "Learn about PantheonSec's mission to provide elite cybersecurity defense and protect global digital infrastructure.",
     },
   ],
 };

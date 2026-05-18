@@ -11,25 +11,9 @@ export const Footer = component$(() => {
         <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Brand & Status Column */}
           <div class="space-y-6 lg:col-span-6">
-            <Link href="/" class="group flex items-center space-x-3">
-              <div class="bg-brand-secondary transition-standard shadow-brand-secondary/20 flex h-9 w-9 items-center justify-center rounded-sm shadow-lg">
-                <svg
-                  viewBox="0 0 24 24"
-                  class="h-5 w-5 text-white"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 2L3 7V12C3 17.52 6.84 22.65 12 24C17.16 22.65 21 17.52 21 12V7L12 2Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-              <span class="text-xl font-black tracking-tighter text-white uppercase">
-                CyberShield
+            <Link href="/" class="group flex items-center">
+              <span class="text-xl font-extrabold tracking-tighter text-white uppercase transition-colors group-hover:text-brand-secondary">
+                PantheonSec
               </span>
             </Link>
             <p class="max-w-md text-sm leading-relaxed opacity-80">
@@ -131,7 +115,7 @@ export const Footer = component$(() => {
         {/* Bottom Bar */}
         <div class="mt-12 flex flex-col items-center justify-between space-y-4 border-t border-slate-800 pt-8 md:flex-row md:space-y-0 lg:mt-16">
           <p class="font-mono text-[9px] tracking-widest uppercase opacity-40">
-            &copy; {currentYear} CyberShield Tactical Operations.
+            &copy; {currentYear} PantheonSec Tactical Operations.
           </p>
           <div class="flex space-x-6 text-[9px] font-bold tracking-widest uppercase opacity-60">
             <a href="#" class="transition-colors hover:text-white">

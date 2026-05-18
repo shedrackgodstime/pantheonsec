@@ -14,7 +14,7 @@ export default component$(() => {
         badgeText="Our Capabilities"
         badgeVariant="secondary"
         title="Specialized Defense for Enterprise Resilience."
-        subtitle="CyberShield provides a comprehensive suite of security services designed to identify, neutralize, and prevent sophisticated digital threats across your entire infrastructure."
+        subtitle="PantheonSec provides a comprehensive suite of security services designed to identify, neutralize, and prevent sophisticated digital threats across your entire infrastructure."
         variant="muted"
       />
 
@@ -400,12 +400,12 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Professional Security Services | CyberShield",
+  title: "Professional Security Services | PantheonSec",
   meta: [
     {
       name: "description",
       content:
-        "Explore CyberShield's specialized security capabilities including Red Teaming, Incident Response, and Digital Forensics.",
+        "Explore PantheonSec's specialized security capabilities including Red Teaming, Incident Response, and Digital Forensics.",
     },
   ],
 };

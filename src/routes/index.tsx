@@ -30,7 +30,7 @@ export default component$(() => {
               </h1>
 
               <p class="max-w-2xl text-lg leading-relaxed font-medium text-slate-600 sm:text-xl">
-                CyberShield deploys elite Red Teaming, rapid Incident Response,
+                PantheonSec deploys elite Red Teaming, rapid Incident Response,
                 and deep Digital Forensics to safeguard enterprise networks and
                 cloud assets. We neutralize threats before they disrupt your
                 operations.
@@ -116,7 +116,7 @@ export default component$(() => {
             <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
               <div class="lg:col-span-8">
                 <p class="text-lg leading-relaxed text-slate-400 sm:text-xl">
-                  CyberShield engineers asymmetric defense layers that
+                  PantheonSec engineers asymmetric defense layers that
                   neutralize sophisticated threat actors before they touch your
                   core infrastructure. We don't just monitor; we prevent.
                 </p>
@@ -157,7 +157,7 @@ export default component$(() => {
               Infrastructure Defense.
             </h2>
             <p class="text-lg leading-relaxed font-medium text-slate-600">
-              CyberShield operates through specialized departments, each focused
+              PantheonSec operates through specialized departments, each focused
               on a critical vector of the security lifecycle. From proactive
               breach simulation to reactive digital forensics.
             </p>
@@ -328,7 +328,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "CyberShield | Enterprise-Grade Cybersecurity Services",
+  title: "PantheonSec | Enterprise-Grade Cybersecurity Services",
   meta: [
     {
       name: "description",
