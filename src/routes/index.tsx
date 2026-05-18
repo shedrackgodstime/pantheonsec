@@ -178,7 +178,7 @@ export default component$(() => {
           <img
             src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070"
             alt="Security Infrastructure"
-            class="w-full h-full object-cover opacity-70 grayscale"
+            class="h-full w-full object-cover opacity-70 grayscale"
             width={2070}
             height={1380}
           />
@@ -194,13 +194,13 @@ export default component$(() => {
             <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
               <div class="lg:col-span-8">
                 <p class="text-lg leading-relaxed text-slate-400 sm:text-xl">
-                  CyberShield engineers asymmetric defense layers that neutralize
-                  sophisticated threat actors before they touch your core
-                  infrastructure. We don't just monitor; we prevent.
+                  CyberShield engineers asymmetric defense layers that
+                  neutralize sophisticated threat actors before they touch your
+                  core infrastructure. We don't just monitor; we prevent.
                 </p>
               </div>
 
-              <div class="flex flex-row justify-start space-x-10 lg:col-span-4 lg:flex-col lg:justify-end lg:space-x-0 lg:space-y-6">
+              <div class="flex flex-row justify-start space-x-10 lg:col-span-4 lg:flex-col lg:justify-end lg:space-y-6 lg:space-x-0">
                 <div>
                   <p class="text-2xl font-bold tracking-tight text-white">
                     99.9%

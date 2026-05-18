@@ -5,19 +5,16 @@ export const Footer = component$(() => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer class="relative overflow-hidden border-t border-slate-800 bg-slate-900 py-16 text-slate-400 lg:py-24">
-      {/* Subtle background telemetry grid for consistency */}
-      <div class="telemetry-grid pointer-events-none absolute inset-0 z-0 opacity-10"></div>
-
+    <footer class="relative overflow-hidden border-t border-slate-800 bg-slate-900 py-12 text-slate-400 lg:py-16">
       <div class="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
-        <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-16">
-          {/* Brand Column */}
-          <div class="space-y-8 lg:col-span-4">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+          {/* Brand & Status Column */}
+          <div class="space-y-6 lg:col-span-6">
             <Link href="/" class="group flex items-center space-x-3">
-              <div class="bg-brand-secondary transition-standard shadow-brand-secondary/20 flex h-10 w-10 items-center justify-center rounded-sm shadow-lg">
+              <div class="bg-brand-secondary transition-standard shadow-brand-secondary/20 flex h-9 w-9 items-center justify-center rounded-sm shadow-lg">
                 <svg
                   viewBox="0 0 24 24"
-                  class="h-6 w-6 text-white"
+                  class="h-5 w-5 text-white"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -30,35 +27,29 @@ export const Footer = component$(() => {
                   />
                 </svg>
               </div>
-              <span class="text-2xl font-black tracking-tighter text-white uppercase">
+              <span class="text-xl font-black tracking-tighter text-white uppercase">
                 CyberShield
               </span>
             </Link>
-            <p class="max-w-sm text-sm leading-relaxed">
-              Deploying elite asymmetric defense protocols for global enterprise
-              infrastructure. Our mission is the absolute neutralization of
-              digital threats before they manifest.
+            <p class="max-w-md text-sm leading-relaxed opacity-80">
+              Elite asymmetric defense for enterprise infrastructure.
+              Neutralizing digital threats through proactive red teaming and
+              rapid response operations.
             </p>
-            <div class="flex space-x-4">
-              {/* Social Placeholders with tactical styling */}
-              {["X", "LI", "GH"].map((platform) => (
-                <a
-                  key={platform}
-                  href="#"
-                  class="hover:border-brand-secondary transition-standard flex h-8 w-8 items-center justify-center rounded-sm border border-slate-700 text-[10px] font-bold hover:text-white"
-                >
-                  {platform}
-                </a>
-              ))}
+            <div class="flex items-center space-x-2">
+              <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-500"></span>
+              <span class="text-[10px] font-bold tracking-[0.2em] text-emerald-500 uppercase">
+                Ops Center: Active
+              </span>
             </div>
           </div>
 
-          {/* Links Columns */}
-          <div class="space-y-6 lg:col-span-2">
+          {/* Moderate Links - Services */}
+          <div class="space-y-6 lg:col-span-3">
             <h4 class="text-xs font-black tracking-[0.2em] text-white uppercase">
-              Capabilities
+              Services
             </h4>
-            <ul class="space-y-4 text-sm">
+            <ul class="space-y-3 text-sm">
               <li>
                 <Link
                   href="/services"
@@ -80,7 +71,7 @@ export const Footer = component$(() => {
                   href="/services"
                   class="hover:text-brand-secondary transition-colors"
                 >
-                  Cloud Forensics
+                  Digital Forensics
                 </Link>
               </li>
               <li>
@@ -88,79 +79,32 @@ export const Footer = component$(() => {
                   href="/services"
                   class="hover:text-brand-secondary transition-colors"
                 >
-                  Threat Hunting
+                  Cloud Security
                 </Link>
               </li>
             </ul>
           </div>
 
-          <div class="space-y-6 lg:col-span-2">
-            <h4 class="text-xs font-black tracking-[0.2em] text-white uppercase">
-              Intelligence
-            </h4>
-            <ul class="space-y-4 text-sm">
-              <li>
-                <Link
-                  href="/blog"
-                  class="hover:text-brand-secondary transition-colors"
-                >
-                  Security Advisories
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  class="hover:text-brand-secondary transition-colors"
-                >
-                  Research Lab
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  class="hover:text-brand-secondary transition-colors"
-                >
-                  Zero-Day Analysis
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  class="hover:text-brand-secondary transition-colors"
-                >
-                  Case Studies
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div class="space-y-6 lg:col-span-2">
+          {/* Moderate Links - Company */}
+          <div class="space-y-6 lg:col-span-3">
             <h4 class="text-xs font-black tracking-[0.2em] text-white uppercase">
               Company
             </h4>
-            <ul class="space-y-4 text-sm">
+            <ul class="space-y-3 text-sm">
               <li>
                 <Link
                   href="/about"
                   class="hover:text-brand-secondary transition-colors"
                 >
-                  Our Mission
+                  About Us
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/blog"
                   class="hover:text-brand-secondary transition-colors"
                 >
-                  The Team
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  class="hover:text-brand-secondary transition-colors"
-                >
-                  Careers
+                  Intelligence
                 </Link>
               </li>
               <li>
@@ -171,40 +115,29 @@ export const Footer = component$(() => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/contact"
+                  class="hover:text-brand-secondary transition-colors"
+                >
+                  Careers
+                </Link>
+              </li>
             </ul>
-          </div>
-
-          {/* Status Column */}
-          <div class="space-y-6 lg:col-span-2">
-            <h4 class="text-xs font-black tracking-[0.2em] text-white uppercase">
-              System Status
-            </h4>
-            <div class="rounded-sm border border-slate-700/50 bg-slate-800/50 p-4">
-              <div class="mb-2 flex items-center space-x-2">
-                <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-500"></span>
-                <span class="text-[10px] font-bold tracking-widest text-emerald-500 uppercase">
-                  Global Ops: Normal
-                </span>
-              </div>
-              <p class="font-mono text-[9px] leading-tight uppercase opacity-50">
-                All monitoring nodes active. Latency within nominal parameters.
-              </p>
-            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div class="mt-16 flex flex-col items-center justify-between space-y-4 border-t border-slate-800 pt-8 md:flex-row md:space-y-0 lg:mt-24">
-          <p class="font-mono text-[10px] tracking-widest uppercase opacity-40">
-            &copy; {currentYear} CyberShield Tactical Operations. All rights
-            reserved.
+        <div class="mt-12 flex flex-col items-center justify-between space-y-4 border-t border-slate-800 pt-8 md:flex-row md:space-y-0 lg:mt-16">
+          <p class="font-mono text-[9px] tracking-widest uppercase opacity-40">
+            &copy; {currentYear} CyberShield Tactical Operations.
           </p>
-          <div class="flex space-x-8 text-[10px] font-bold tracking-widest uppercase opacity-60">
+          <div class="flex space-x-6 text-[9px] font-bold tracking-widest uppercase opacity-60">
             <a href="#" class="transition-colors hover:text-white">
-              Privacy Protocol
+              Privacy
             </a>
             <a href="#" class="transition-colors hover:text-white">
-              Terms of Engagement
+              Terms
             </a>
             <a href="#" class="transition-colors hover:text-white">
               Compliance
