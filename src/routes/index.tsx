@@ -1,5 +1,8 @@
 import { component$ } from "@builder.io/qwik";
-import { Link, type DocumentHead } from "@builder.io/qwik-city";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { Badge } from "~/components/ui/badge";
+import { Button } from "~/components/ui/button";
+import { TelemetryConsole } from "~/components/ui/telemetry-console";
 
 export default component$(() => {
   return (
@@ -11,10 +14,9 @@ export default component$(() => {
         <div class="relative z-10 mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center gap-12 lg:mb-12 lg:grid-cols-12 lg:gap-20">
           {/* Left Column: Copy & Actions */}
           <div class="flex flex-col items-center space-y-8 text-center lg:col-span-7 lg:items-start lg:text-left">
-            <div class="inline-flex items-center rounded-sm border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 font-mono text-xs font-medium tracking-wider text-emerald-600">
-              <span class="animate-pulse-slow mr-2 flex h-2 w-2 rounded-full bg-emerald-500"></span>
+            <Badge variant="accent" pulse={true}>
               SECURE INTAKE // ACTIVE & DISCREET
-            </div>
+            </Badge>
 
             <h1 class="text-4xl leading-[1.1] font-bold tracking-tighter text-slate-900 sm:text-5xl lg:text-7xl lg:leading-[1.05]">
               Asymmetric Defense for{" "}
@@ -30,7 +32,7 @@ export default component$(() => {
             </p>
 
             <div class="flex w-full flex-col gap-4 pt-4 sm:w-auto sm:flex-row">
-              <button class="transition-standard group flex w-full items-center justify-center rounded-sm bg-slate-900 px-8 py-4 font-semibold text-white hover:bg-slate-800 hover:shadow-lg focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 sm:w-auto">
+              <Button href="/contact" variant="primary" size="lg" class="group w-full sm:w-auto">
                 Initiate Secure Intake
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -46,10 +48,10 @@ export default component$(() => {
                     d="M14 5l7 7m0 0l-7 7m7-7H3"
                   />
                 </svg>
-              </button>
-              <button class="transition-standard w-full rounded-sm border border-slate-300 bg-white px-8 py-4 font-semibold text-slate-900 hover:border-slate-400 hover:bg-slate-50 sm:w-auto">
+              </Button>
+              <Button href="/services" variant="outline" size="lg" class="w-full sm:w-auto">
                 View Tactical Scope
-              </button>
+              </Button>
             </div>
 
             <div class="grid w-full grid-cols-2 gap-6 border-t border-slate-200/60 pt-8 sm:grid-cols-3">
@@ -81,93 +83,7 @@ export default component$(() => {
           </div>
 
           {/* Right Column: Telemetry Visual */}
-          <div class="relative mx-auto mt-8 w-full max-w-lg lg:col-span-5 lg:mt-0 lg:max-w-none">
-            <div class="bg-brand-secondary/10 animate-pulse-slow absolute -inset-10 rounded-full blur-3xl"></div>
-
-            <div class="dark-glass-panel relative overflow-hidden rounded-xl border border-slate-700/50 font-mono text-sm shadow-2xl">
-              {/* Terminal Header */}
-              <div class="flex items-center border-b border-slate-700/50 bg-slate-900/80 px-4 py-3">
-                <div class="flex space-x-2">
-                  <div class="h-3 w-3 rounded-full bg-slate-600"></div>
-                  <div class="h-3 w-3 rounded-full bg-slate-600"></div>
-                  <div class="h-3 w-3 rounded-full bg-slate-600"></div>
-                </div>
-                <div class="ml-4 flex-1 text-center text-xs font-semibold tracking-wider text-slate-400">
-                  CS-CORE-TELEMETRY
-                </div>
-                <div class="flex items-center text-xs text-emerald-400">
-                  <span class="mr-2 h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
-                  ONLINE
-                </div>
-              </div>
-
-              {/* Terminal Body */}
-              <div class="relative h-[320px] overflow-hidden p-4 text-slate-300 sm:h-[400px] sm:p-6">
-                {/* Grid Background */}
-                <div class="telemetry-grid absolute inset-0 opacity-20"></div>
-
-                {/* Scanline */}
-                <div class="via-brand-secondary/20 animate-scan pointer-events-none absolute top-0 right-0 left-0 z-10 h-16 bg-gradient-to-b from-transparent to-transparent"></div>
-
-                {/* Content */}
-                <div class="relative z-20 space-y-4">
-                  <div class="flex items-center justify-between border-b border-slate-700/50 pb-2">
-                    <span class="text-xs text-slate-500 sm:text-sm">
-                      SYSTEM STATUS
-                    </span>
-                    <span class="text-xs font-bold text-emerald-400 sm:text-sm">
-                      SECURE
-                    </span>
-                  </div>
-
-                  <div class="space-y-2">
-                    <div class="flex justify-between text-[10px] sm:text-xs">
-                      <span class="text-slate-400">ACTIVE DEFENSE NODES:</span>
-                      <span class="text-white">1,482</span>
-                    </div>
-                    <div class="flex justify-between text-[10px] sm:text-xs">
-                      <span class="text-slate-400">THREAT INGESTION RATE:</span>
-                      <span class="text-white">42.5k / sec</span>
-                    </div>
-                    <div class="flex justify-between text-[10px] sm:text-xs">
-                      <span class="text-slate-400">SHIELD PROTOCOL:</span>
-                      <span class="text-brand-secondary">ENGAGED</span>
-                    </div>
-                  </div>
-
-                  <div class="mt-4 border-t border-slate-700/50 pt-4 sm:mt-6">
-                    <div class="mb-2 text-[10px] text-slate-500 sm:text-xs">
-                      LIVE ANOMALY SCAN
-                    </div>
-
-                    {/* Faux graph bars */}
-                    <div class="mt-2 flex h-16 items-end space-x-1 opacity-80 sm:h-24">
-                      {Array.from({ length: 24 }).map((_, i) => {
-                        const height = Math.floor(Math.random() * 40) + 10;
-                        return (
-                          <div
-                            key={i}
-                            class="bg-brand-secondary/40 w-full rounded-t-sm"
-                            style={`height: ${height}%`}
-                          ></div>
-                        );
-                      })}
-                    </div>
-                    <div class="mt-1 flex justify-between text-[8px] text-slate-500 sm:text-[10px]">
-                      <span>-1H</span>
-                      <span>NOW</span>
-                    </div>
-                  </div>
-
-                  <div class="mt-4 font-mono text-[10px] text-slate-400 sm:text-xs">
-                    <span class="text-brand-secondary mr-2">➜</span>
-                    <span class="opacity-70">Awaiting external input...</span>
-                    <span class="animate-pulse">_</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <TelemetryConsole class="lg:col-span-5" />
         </div>
       </div>
 
@@ -224,14 +140,11 @@ export default component$(() => {
       </section>
 
       {/* Core Services Section */}
-
       <section class="relative overflow-hidden bg-white py-24 lg:py-32">
         <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
           {/* Section Header */}
-          <div class="mb-16 max-w-3xl lg:mb-24">
-            <div class="mb-4 inline-flex items-center rounded-sm border border-slate-200 bg-slate-100 px-3 py-1 text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase">
-              Service Capabilities
-            </div>
+          <div class="mb-16 max-w-3xl lg:mb-24 space-y-6">
+            <Badge variant="slate">Service Capabilities</Badge>
             <h2 class="mb-6 text-3xl leading-tight font-black tracking-tighter text-slate-900 lg:text-5xl">
               Elite Tactical Units for <br class="hidden lg:block" />
               <span class="text-brand-secondary">End-to-End</span>{" "}
@@ -270,10 +183,7 @@ export default component$(() => {
                   detection and response capabilities against real-world threat
                   actors.
                 </p>
-                <Link
-                  href="/services"
-                  class="group/btn inline-flex items-center text-xs font-black tracking-widest text-slate-900 uppercase"
-                >
+                <Button href="/services" variant="link" class="group/btn self-start">
                   Analyze Scope
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -289,7 +199,7 @@ export default component$(() => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </Link>
+                </Button>
               </div>
             </div>
 
@@ -315,10 +225,7 @@ export default component$(() => {
                   breaches, neutralize threats, and restore operations with
                   minimal downtime.
                 </p>
-                <Link
-                  href="/services"
-                  class="group/btn inline-flex items-center text-xs font-black tracking-widest text-slate-900 uppercase"
-                >
+                <Button href="/services" variant="link" class="group/btn self-start">
                   Deploy Protocols
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -334,7 +241,7 @@ export default component$(() => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </Link>
+                </Button>
               </div>
             </div>
 
@@ -360,10 +267,7 @@ export default component$(() => {
                   root causes, extract evidence, and build comprehensive
                   forensic reports.
                 </p>
-                <Link
-                  href="/services"
-                  class="group/btn inline-flex items-center text-xs font-black tracking-widest text-slate-900 uppercase"
-                >
+                <Button href="/services" variant="link" class="group/btn self-start">
                   Investigate
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -379,7 +283,7 @@ export default component$(() => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </Link>
+                </Button>
               </div>
             </div>
 
@@ -405,10 +309,7 @@ export default component$(() => {
                   networks through rigorous architecture reviews and deployment
                   of active defense layers.
                 </p>
-                <Link
-                  href="/services"
-                  class="group/btn inline-flex items-center text-xs font-black tracking-widest text-slate-900 uppercase"
-                >
+                <Button href="/services" variant="link" class="group/btn self-start">
                   Review Defense
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -424,7 +325,7 @@ export default component$(() => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </Link>
+                </Button>
               </div>
             </div>
           </div>

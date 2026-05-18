@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { Badge } from "~/components/ui/badge";
 
 export default component$(() => {
   return (
@@ -11,10 +12,8 @@ export default component$(() => {
         <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-secondary/50 to-transparent"></div>
 
         <div class="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
-          <div class="max-w-4xl">
-            <div class="bg-brand-secondary shadow-brand-secondary/20 mb-8 inline-flex items-center rounded-sm px-3 py-1 text-[10px] font-bold tracking-[0.2em] text-white uppercase shadow-lg">
-              Our Mission
-            </div>
+          <div class="max-w-4xl space-y-8">
+            <Badge variant="primary">Our Mission</Badge>
             <h1 class="mb-10 text-4xl leading-[0.95] font-black tracking-tighter text-white lg:text-8xl">
               Securing the <br />
               <span class="italic text-slate-500">Global Infrastructure.</span>
@@ -31,10 +30,8 @@ export default component$(() => {
       {/* Mission Directives (Premium Light Refactor) */}
       <section class="relative overflow-hidden bg-white py-24 lg:py-40 text-slate-900">
         <div class="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
-          <div class="mb-20 lg:mb-32 max-w-4xl">
-            <div class="bg-brand-secondary/10 border-brand-secondary/20 mb-8 inline-flex items-center rounded-sm border px-3 py-1 text-[10px] font-mono font-bold tracking-[0.3em] text-brand-secondary uppercase">
-              Operational Philosophy
-            </div>
+          <div class="mb-20 lg:mb-32 max-w-4xl space-y-8">
+            <Badge variant="secondary">Operational Philosophy</Badge>
             <h2 class="mb-10 text-4xl leading-[1.05] font-black tracking-tighter text-slate-900 lg:text-7xl">
               The Principles of <br />
               <span class="text-brand-secondary">Asymmetric Defense.</span>

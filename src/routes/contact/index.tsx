@@ -1,5 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { Badge } from "~/components/ui/badge";
+import { Button } from "~/components/ui/button";
+import { Input, Select, Textarea } from "~/components/ui/form-controls";
 
 export default component$(() => {
   return (
@@ -9,9 +12,7 @@ export default component$(() => {
           {/* Left Column: Context & Information */}
           <div class="space-y-12 lg:col-span-5 lg:space-y-16">
             <div class="space-y-6">
-              <div class="bg-brand-secondary/10 text-brand-secondary border-brand-secondary/20 inline-flex items-center rounded-sm border px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase">
-                Contact Us
-              </div>
+              <Badge variant="secondary">Contact Us</Badge>
               <h1 class="text-4xl leading-[1.1] font-black tracking-tighter text-slate-900 lg:text-6xl">
                 Get in <span class="text-brand-secondary">Touch.</span>
               </h1>
@@ -103,84 +104,29 @@ export default component$(() => {
 
               <form class="space-y-10" preventdefault:submit>
                 <div class="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2">
-                  <div class="space-y-3">
-                    <label class="text-[10px] font-black tracking-widest text-slate-400 uppercase">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Full Name"
-                      class="focus:ring-brand-secondary focus:border-brand-secondary transition-standard w-full rounded-sm border border-slate-200 bg-slate-50 px-4 py-4 text-sm placeholder:text-slate-300 focus:ring-1 focus:outline-none"
-                    />
-                  </div>
-                  <div class="space-y-3">
-                    <label class="text-[10px] font-black tracking-widest text-slate-400 uppercase">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="email@company.com"
-                      class="focus:ring-brand-secondary focus:border-brand-secondary transition-standard w-full rounded-sm border border-slate-200 bg-slate-50 px-4 py-4 text-sm placeholder:text-slate-300 focus:ring-1 focus:outline-none"
-                    />
-                  </div>
+                  <Input label="Your Name" placeholder="Full Name" name="name" required />
+                  <Input label="Email Address" type="email" placeholder="email@company.com" name="email" required />
                 </div>
 
                 <div class="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2">
-                  <div class="space-y-3">
-                    <label class="text-[10px] font-black tracking-widest text-slate-400 uppercase">
-                      Company Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Organization"
-                      class="focus:ring-brand-secondary focus:border-brand-secondary transition-standard w-full rounded-sm border border-slate-200 bg-slate-50 px-4 py-4 text-sm placeholder:text-slate-300 focus:ring-1 focus:outline-none"
-                    />
-                  </div>
-                  <div class="space-y-3">
-                    <label class="text-[10px] font-black tracking-widest text-slate-400 uppercase">
-                      Service Interest
-                    </label>
-                    <div class="relative">
-                      <select class="focus:ring-brand-secondary focus:border-brand-secondary transition-standard w-full cursor-pointer appearance-none rounded-sm border border-slate-200 bg-slate-50 px-4 py-4 text-sm focus:ring-1 focus:outline-none">
-                        <option>Security Assessment</option>
-                        <option>Incident Response</option>
-                        <option>Forensic Investigation</option>
-                        <option>Infrastructure Security</option>
-                        <option>Other</option>
-                      </select>
-                      <div class="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-slate-400">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="h-4 w-4"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
+                  <Input label="Company Name" placeholder="Organization" name="company" />
+                  <Select
+                    label="Service Interest"
+                    name="interest"
+                    options={[
+                      "Security Assessment",
+                      "Incident Response",
+                      "Forensic Investigation",
+                      "Infrastructure Security",
+                      "Other",
+                    ]}
+                  />
                 </div>
 
-                <div class="space-y-3">
-                  <label class="text-[10px] font-black tracking-widest text-slate-400 uppercase">
-                    Message Details
-                  </label>
-                  <textarea
-                    rows={6}
-                    placeholder="How can we help you?"
-                    class="focus:ring-brand-secondary focus:border-brand-secondary transition-standard w-full resize-none rounded-sm border border-slate-200 bg-slate-50 px-4 py-4 text-sm placeholder:text-slate-300 focus:ring-1 focus:outline-none"
-                  ></textarea>
-                </div>
+                <Textarea label="Message Details" placeholder="How can we help you?" name="message" required />
 
                 <div class="pt-6">
-                  <button class="group transition-standard hover:bg-brand-secondary flex w-full items-center justify-center rounded-sm bg-slate-900 py-6 font-black tracking-[0.2em] text-white uppercase hover:shadow-2xl active:scale-[0.99]">
+                  <Button type="submit" variant="primary" size="xl" class="group w-full py-6 active:scale-[0.99] hover:bg-brand-secondary">
                     Send Message
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +142,7 @@ export default component$(() => {
                         d="M14 5l7 7m0 0l-7 7m7-7H3"
                       />
                     </svg>
-                  </button>
+                  </Button>
                   <p class="mt-8 text-center font-mono text-[10px] tracking-[0.3em] text-slate-400 uppercase opacity-60">
                     We value your privacy. Your information is handled securely.
                   </p>

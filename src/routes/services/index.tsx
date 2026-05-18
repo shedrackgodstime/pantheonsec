@@ -1,5 +1,7 @@
 import { component$ } from "@builder.io/qwik";
-import { Link, type DocumentHead } from "@builder.io/qwik-city";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { Badge } from "~/components/ui/badge";
+import { Button } from "~/components/ui/button";
 
 export default component$(() => {
   return (
@@ -9,10 +11,8 @@ export default component$(() => {
         <div class="telemetry-grid pointer-events-none absolute inset-0 z-0 opacity-30"></div>
 
         <div class="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
-          <div class="max-w-4xl">
-            <div class="bg-brand-secondary/10 text-brand-secondary border-brand-secondary/20 mb-6 inline-flex items-center rounded-sm border px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase">
-              Our Capabilities
-            </div>
+          <div class="max-w-4xl space-y-6">
+            <Badge variant="secondary">Our Capabilities</Badge>
             <h1 class="mb-8 text-4xl leading-[1.1] font-black tracking-tighter text-slate-900 lg:text-7xl">
               Specialized Defense for <br />
               <span class="text-brand-secondary">Enterprise Resilience.</span>
@@ -108,9 +108,9 @@ export default component$(() => {
               </div>
 
               <div class="pt-4">
-                <button class="transition-standard hover:bg-brand-secondary rounded-sm bg-slate-900 px-8 py-5 font-black tracking-[0.2em] text-white uppercase hover:shadow-xl active:scale-[0.98]">
+                <Button variant="primary" size="lg">
                   Request Simulation Scope
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -184,9 +184,9 @@ export default component$(() => {
               </div>
 
               <div class="pt-4">
-                <button class="transition-standard rounded-sm bg-slate-900 px-8 py-5 font-black tracking-[0.2em] text-white uppercase hover:bg-emerald-600 hover:shadow-xl active:scale-[0.98]">
+                <Button variant="primary" size="lg" class="hover:bg-emerald-600">
                   Deploy Response Unit
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -206,6 +206,7 @@ export default component$(() => {
           </div>
         </div>
       </section>
+
       {/* Service Unit 03: Digital Forensics */}
       <section class="bg-white py-24 lg:py-40">
         <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
@@ -287,14 +288,15 @@ export default component$(() => {
               </div>
 
               <div class="pt-4">
-                <button class="transition-standard hover:bg-brand-secondary rounded-sm bg-slate-900 px-8 py-5 font-black tracking-[0.2em] text-white uppercase hover:shadow-xl active:scale-[0.98]">
+                <Button variant="primary" size="lg">
                   Start Investigation
-                </button>
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       {/* Service Unit 04: Infrastructure Hardening */}
       <section class="bg-slate-50 py-24 lg:py-40">
         <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
@@ -363,9 +365,9 @@ export default component$(() => {
               </div>
 
               <div class="pt-4">
-                <button class="transition-standard rounded-sm bg-slate-900 px-8 py-5 font-black tracking-[0.2em] text-white uppercase hover:bg-slate-700 hover:shadow-xl active:scale-[0.98]">
+                <Button variant="primary" size="lg" class="hover:bg-slate-700">
                   Review Our Framework
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -400,18 +402,12 @@ export default component$(() => {
               strategy for your organization.
             </p>
             <div class="flex flex-col items-center justify-center gap-6 pt-4 sm:flex-row">
-              <Link
-                href="/contact"
-                class="bg-brand-secondary transition-standard hover:shadow-brand-secondary/20 w-full rounded-sm px-10 py-5 font-black tracking-[0.2em] text-white uppercase hover:bg-blue-500 hover:shadow-2xl active:scale-[0.98] sm:w-auto"
-              >
+              <Button href="/contact" variant="secondary" size="lg" class="w-full hover:bg-blue-500 sm:w-auto">
                 Contact an Expert
-              </Link>
-              <Link
-                href="/about"
-                class="transition-standard w-full rounded-sm border border-slate-700 bg-transparent px-10 py-5 font-black tracking-[0.2em] text-white uppercase hover:bg-white hover:text-slate-900 active:scale-[0.98] sm:w-auto"
-              >
+              </Button>
+              <Button href="/about" variant="outline" size="lg" class="w-full border-slate-700 bg-transparent text-white hover:bg-white hover:text-slate-900 sm:w-auto">
                 Learn About Our Team
-              </Link>
+              </Button>
             </div>
           </div>
         </div>
