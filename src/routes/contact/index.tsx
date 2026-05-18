@@ -3,6 +3,8 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { Input, Select, Textarea } from "~/components/ui/form-controls";
+import { Container } from "~/components/layout/container";
+import { Section } from "~/components/layout/section";
 
 export default component$(() => {
   const formState = useStore({
@@ -40,8 +42,8 @@ export default component$(() => {
   });
 
   return (
-    <div class="min-h-screen bg-slate-50 py-12 lg:py-20">
-      <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
+    <Section variant="muted" padding="none" class="min-h-screen py-12 lg:py-20">
+      <Container>
         <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-24">
           {/* Left Column: Context & Information */}
           <div class="space-y-12 lg:col-span-5 lg:space-y-16">
@@ -204,10 +206,10 @@ export default component$(() => {
                     <Button
                       variant="primary"
                       class="w-full py-4 text-center tracking-widest hover:bg-brand-secondary"
-                      onClick$={() => {
+                      onClick$={$(() => {
                         formState.isSubmitted = false;
                         formState.progress = 0;
-                      }}
+                      })}
                     >
                       Establish New Session
                     </Button>
@@ -267,8 +269,8 @@ export default component$(() => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </Container>
+    </Section>
   );
 });
 

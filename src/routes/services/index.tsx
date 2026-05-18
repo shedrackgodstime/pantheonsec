@@ -1,34 +1,25 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
+import { Container } from "~/components/layout/container";
+import { PageHeader } from "~/components/layout/page-header";
+import { Section } from "~/components/layout/section";
 
 export default component$(() => {
   return (
     <div class="min-h-screen bg-white">
-      {/* Services Hero Section */}
-      <section class="relative overflow-hidden border-b border-slate-100 bg-slate-50 py-24 lg:py-32">
-        <div class="telemetry-grid pointer-events-none absolute inset-0 z-0 opacity-30"></div>
-
-        <div class="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
-          <div class="max-w-4xl space-y-6">
-            <Badge variant="secondary">Our Capabilities</Badge>
-            <h1 class="mb-8 text-4xl leading-[1.1] font-black tracking-tighter text-slate-900 lg:text-7xl">
-              Specialized Defense for <br />
-              <span class="text-brand-secondary">Enterprise Resilience.</span>
-            </h1>
-            <p class="max-w-2xl text-xl leading-relaxed font-medium text-slate-600">
-              CyberShield provides a comprehensive suite of security services
-              designed to identify, neutralize, and prevent sophisticated
-              digital threats across your entire infrastructure.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Services Hero Section (Unified Layout) */}
+      <PageHeader
+        badgeText="Our Capabilities"
+        badgeVariant="secondary"
+        title="Specialized Defense for Enterprise Resilience."
+        subtitle="CyberShield provides a comprehensive suite of security services designed to identify, neutralize, and prevent sophisticated digital threats across your entire infrastructure."
+        variant="muted"
+      />
 
       {/* Service Unit 01: Red Teaming */}
-      <section class="py-24 lg:py-40">
-        <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
+      <Section variant="light" padding="lg">
+        <Container>
           <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-24">
             {/* Visual Column */}
             <div class="lg:col-span-6">
@@ -114,12 +105,12 @@ export default component$(() => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* Service Unit 02: Incident Response */}
-      <section class="bg-slate-50 py-24 lg:py-40">
-        <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
+      <Section variant="muted" padding="lg">
+        <Container>
           <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-24">
             {/* Content Column */}
             <div class="order-2 space-y-10 lg:order-1 lg:col-span-6">
@@ -204,12 +195,12 @@ export default component$(() => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* Service Unit 03: Digital Forensics */}
-      <section class="bg-white py-24 lg:py-40">
-        <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
+      <Section variant="light" padding="lg">
+        <Container>
           <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-24">
             {/* Visual Column */}
             <div class="lg:col-span-6">
@@ -294,12 +285,12 @@ export default component$(() => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* Service Unit 04: Infrastructure Hardening */}
-      <section class="bg-slate-50 py-24 lg:py-40">
-        <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
+      <Section variant="muted" padding="lg">
+        <Container>
           <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-24">
             {/* Content Column */}
             <div class="order-2 space-y-10 lg:order-1 lg:col-span-6">
@@ -385,13 +376,12 @@ export default component$(() => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* Global Services CTA */}
-      <section class="relative overflow-hidden bg-slate-900 py-24 lg:py-32">
-        <div class="telemetry-grid pointer-events-none absolute inset-0 z-0 opacity-10"></div>
-        <div class="relative z-10 mx-auto max-w-[1600px] px-4 text-center sm:px-8 lg:px-12">
+      <Section variant="dark" padding="md" withGrid={true}>
+        <Container class="text-center">
           <div class="mx-auto max-w-3xl space-y-10">
             <h2 class="text-3xl leading-tight font-black tracking-tighter text-white lg:text-6xl">
               Ready to Secure Your <br />
@@ -410,8 +400,8 @@ export default component$(() => {
               </Button>
             </div>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </div>
   );
 });

@@ -1,35 +1,25 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Badge } from "~/components/ui/badge";
+import { Container } from "~/components/layout/container";
+import { PageHeader } from "~/components/layout/page-header";
+import { Section } from "~/components/layout/section";
 
 export default component$(() => {
   return (
     <div class="min-h-screen bg-white">
-      {/* About Hero Section */}
-      <section class="relative overflow-hidden bg-slate-900 py-24 lg:py-40 text-white">
-        {/* Background visual detail */}
-        <div class="absolute inset-0 z-0 opacity-20 telemetry-grid pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-secondary/50 to-transparent"></div>
+      {/* About Hero Section (Unified Layout) */}
+      <PageHeader
+        badgeText="Our Mission"
+        badgeVariant="primary"
+        title="Securing the Global Infrastructure."
+        subtitle="CyberShield was founded on a single principle: to provide elite, asymmetric defense for organizations that cannot afford a perimeter failure."
+        variant="dark"
+      />
 
-        <div class="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
-          <div class="max-w-4xl space-y-8">
-            <Badge variant="primary">Our Mission</Badge>
-            <h1 class="mb-10 text-4xl leading-[0.95] font-black tracking-tighter text-white lg:text-8xl">
-              Securing the <br />
-              <span class="italic text-slate-500">Global Infrastructure.</span>
-            </h1>
-            <p class="text-xl leading-relaxed font-medium text-slate-400 lg:text-2xl max-w-2xl">
-              CyberShield was founded on a single principle: to provide elite,
-              asymmetric defense for organizations that cannot afford a
-              perimeter failure.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission Directives (Premium Light Refactor) */}
-      <section class="relative overflow-hidden bg-white py-24 lg:py-40 text-slate-900">
-        <div class="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
+      {/* Mission Directives (Unified Layout) */}
+      <Section variant="light" padding="lg">
+        <Container>
           <div class="mb-20 lg:mb-32 max-w-4xl space-y-8">
             <Badge variant="secondary">Operational Philosophy</Badge>
             <h2 class="mb-10 text-4xl leading-[1.05] font-black tracking-tighter text-slate-900 lg:text-7xl">
@@ -115,8 +105,8 @@ export default component$(() => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </div>
   );
 });
