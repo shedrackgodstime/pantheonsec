@@ -19,13 +19,24 @@ export const Card = component$<CardProps>(({ class: className = "", hoverable = 
   );
 });
 
-export const CardImage = component$<{ class?: string }>(({ class: className = "" }) => {
+export interface CardImageProps {
+  class?: string;
+  variant?: "primary" | "emerald" | "slate";
+}
+
+export const CardImage = component$<CardImageProps>(({ class: className = "", variant = "primary" }) => {
+  const overlays = {
+    primary: "bg-brand-secondary/10",
+    emerald: "bg-emerald-500/10",
+    slate: "bg-slate-500/10",
+  };
+
   return (
     <div class={`relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-slate-900 ${className}`}>
       <div class="telemetry-grid absolute inset-0 opacity-20"></div>
       <Slot />
       {/* Overlay on hover */}
-      <div class="bg-brand-secondary/10 absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+      <div class={`${overlays[variant]} absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}></div>
     </div>
   );
 });

@@ -4,6 +4,7 @@ import { Button } from "~/components/ui/button";
 import { Container } from "~/components/layout/container";
 import { PageHeader } from "~/components/layout/page-header";
 import { Section } from "~/components/layout/section";
+import { Card, CardImage } from "~/components/ui/card";
 
 export default component$(() => {
   return (
@@ -21,18 +22,15 @@ export default component$(() => {
       <Section variant="light" padding="lg">
         <Container>
           <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-24">
-            {/* Visual Column */}
+            {/* Visual Column (Modular Card System) */}
             <div class="lg:col-span-6">
-              <div class="group relative overflow-hidden rounded-sm bg-slate-900 shadow-2xl">
-                <div class="telemetry-grid pointer-events-none absolute inset-0 z-0 opacity-20"></div>
-                <div class="relative z-10 flex aspect-[16/10] items-center justify-center">
+              <Card>
+                <CardImage variant="primary">
                   <span class="border border-slate-800 bg-slate-950/50 px-4 py-2 font-mono text-[10px] tracking-[0.4em] text-slate-500 uppercase">
                     Capability_Visual // Red_Team
                   </span>
-                </div>
-                {/* Decorative corner accent */}
-                <div class="bg-brand-secondary/10 pointer-events-none absolute top-0 right-0 h-16 w-16 transition-transform duration-700 group-hover:scale-150"></div>
-              </div>
+                </CardImage>
+              </Card>
             </div>
 
             {/* Content Column */}
@@ -181,18 +179,15 @@ export default component$(() => {
               </div>
             </div>
 
-            {/* Visual Column */}
+            {/* Visual Column (Modular Card System) */}
             <div class="order-1 lg:order-2 lg:col-span-6">
-              <div class="group relative overflow-hidden rounded-sm bg-slate-900 shadow-2xl">
-                <div class="telemetry-grid pointer-events-none absolute inset-0 z-0 opacity-20"></div>
-                <div class="relative z-10 flex aspect-[16/10] items-center justify-center">
+              <Card>
+                <CardImage variant="emerald">
                   <span class="border border-slate-800 bg-slate-950/50 px-4 py-2 font-mono text-[10px] tracking-[0.4em] text-slate-500 uppercase">
                     Capability_Visual // Response_Ops
                   </span>
-                </div>
-                {/* Decorative corner accent - Emerald for Reactive */}
-                <div class="pointer-events-none absolute top-0 left-0 h-16 w-16 bg-emerald-500/10 transition-transform duration-700 group-hover:scale-150"></div>
-              </div>
+                </CardImage>
+              </Card>
             </div>
           </div>
         </Container>
@@ -202,18 +197,15 @@ export default component$(() => {
       <Section variant="light" padding="lg">
         <Container>
           <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-24">
-            {/* Visual Column */}
+            {/* Visual Column (Modular Card System) */}
             <div class="lg:col-span-6">
-              <div class="group relative overflow-hidden rounded-sm bg-slate-900 shadow-2xl">
-                <div class="telemetry-grid pointer-events-none absolute inset-0 z-0 opacity-20"></div>
-                <div class="relative z-10 flex aspect-[16/10] items-center justify-center">
+              <Card>
+                <CardImage variant="primary">
                   <span class="border border-slate-800 bg-slate-950/50 px-4 py-2 font-mono text-[10px] tracking-[0.4em] text-slate-500 uppercase">
                     Capability_Visual // Forensics
                   </span>
-                </div>
-                {/* Decorative corner accent - Brand Blue */}
-                <div class="bg-brand-secondary/10 pointer-events-none absolute top-0 right-0 h-16 w-16 transition-transform duration-700 group-hover:scale-150"></div>
-              </div>
+                </CardImage>
+              </Card>
             </div>
 
             {/* Content Column */}
@@ -362,18 +354,15 @@ export default component$(() => {
               </div>
             </div>
 
-            {/* Visual Column */}
+            {/* Visual Column (Modular Card System) */}
             <div class="order-1 lg:order-2 lg:col-span-6">
-              <div class="group relative overflow-hidden rounded-sm bg-slate-900 shadow-2xl">
-                <div class="telemetry-grid pointer-events-none absolute inset-0 z-0 opacity-20"></div>
-                <div class="relative z-10 flex aspect-[16/10] items-center justify-center">
+              <Card>
+                <CardImage variant="slate">
                   <span class="border border-slate-800 bg-slate-950/50 px-4 py-2 font-mono text-[10px] tracking-[0.4em] text-slate-500 uppercase">
                     Capability_Visual // Network_Ops
                   </span>
-                </div>
-                {/* Decorative corner accent - Slate for Hardening */}
-                <div class="pointer-events-none absolute top-0 left-0 h-16 w-16 bg-slate-500/10 transition-transform duration-700 group-hover:scale-150"></div>
-              </div>
+                </CardImage>
+              </Card>
             </div>
           </div>
         </Container>
